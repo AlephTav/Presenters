@@ -1,0 +1,22 @@
+{
+    "name": "alephtools/presenter",
+    "type": "library",
+    "description": "Data presenters based on the array converter.",
+    "license": "MIT",
+    "keywords": ["aleph", "presenter", "array", "converter"],
+    "authors": [
+        {
+            "name": "Aleph Tav",
+            "email": "4lephtav@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "nesbot/carbon": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlephTools\\Data\\Presenters": "src/"
+        }
+    }
+}
