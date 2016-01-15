@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils\Presenters;
+namespace AlephTools\Data\Presenters;
 
 use Illuminate\Database\Eloquent\Model;
 
