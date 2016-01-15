@@ -1,5 +1,5 @@
 {
-    "name": "alephtools/presenter",
+    "name": "alephtools/presenters",
     "type": "library",
     "description": "Data presenters based on the array converter.",
     "license": "MIT",
