@@ -376,7 +376,11 @@ class ArrayPresenter
                             $key = $key === $in['name'] ? $value : $values[$key];
                         }
                     }
-                    $a = &$a[$key];
+                    if (!is_array($a))
+                    {
+                        $a = [];
+                    }
+                    @$a = &$a[$key];
                 }
                 if ($valueType === $this->valueNamePrefix)
                 {
@@ -1307,7 +1311,7 @@ class ArrayPresenter
             {
                 if (!is_array($value))
                 {
-                    $this->throwInvalidElementException(static::ERR_CONVERTER_ARRAY_4, $keyValues);
+                    $this->throwInvalidElementException(static::ERR_ARRAY_PRESENTER_4, $keyValues);
                 }
                 $keys = array_slice($keys, $n + 1);
                 if ($this->preservePartlyExistingElements && count($value) == 0)
@@ -1344,7 +1348,7 @@ class ArrayPresenter
                 {
                     if ($required)
                     {
-                        $this->throwInvalidElementException(static::ERR_CONVERTER_ARRAY_3, array_merge($keyValues, [$key]));
+                        $this->throwInvalidElementException(static::ERR_ARRAY_PRESENTER_3, array_merge($keyValues, [$key]));
                     }
                     $value = $this->preservePartlyExistingElements ? [] : null;
                 }
@@ -1381,7 +1385,7 @@ class ArrayPresenter
             {
                 if (!is_array($a))
                 {
-                    $this->throwInvalidElementException(static::ERR_CONVERTER_ARRAY_4, $keyValues);
+                    $this->throwInvalidElementException(static::ERR_ARRAY_PRESENTER_4, $keyValues);
                 }
                 if ($n == $last)
                 {
