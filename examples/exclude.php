@@ -2,7 +2,7 @@
 
 use AlephTools\Data\Presenters\ArrayPresenter;
 
-require_once(__DIR__ . '/../src/ArrayPresenter.php');
+require_once(__DIR__ . '/../vendor/autoload.php');
 
 $a = require(__DIR__ . '/data.php');
 

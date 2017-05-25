@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2016 Aleph Tav
+ * Copyright (c) 2017 Aleph Tav
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -15,7 +15,7 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  * @author Aleph Tav <4lephtav@gmail.com>
- * @copyright Copyright &copy; 2016 Aleph Tav
+ * @copyright Copyright &copy; 2017 Aleph Tav
  * @license http://www.opensource.org/licenses/MIT
  */
 
@@ -35,8 +35,7 @@ class ModelPresenter extends ArrayPresenter
     /**
      * Constructor.
      *
-     * @param Illuminate\Database\Eloquent\Model $model - a model to present.
-     * @access public
+     * @param Illuminate\Database\Eloquent\Model $model A model to present.
      */
     public function __construct(Model $model)
     {

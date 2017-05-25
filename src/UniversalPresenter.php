@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2016 Aleph Tav
+ * Copyright (c) 2017 Aleph Tav
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -15,7 +15,7 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  * @author Aleph Tav <4lephtav@gmail.com>
- * @copyright Copyright &copy; 2016 Aleph Tav
+ * @copyright Copyright &copy; 2017 Aleph Tav
  * @license http://www.opensource.org/licenses/MIT
  */
 
@@ -36,25 +36,19 @@ class UniversalPresenter extends ArrayPresenter
     /**
      * Constructor.
      *
-     * @param Illuminate\Database\Eloquent\Collection $collection - a collection to present.
+     * @param mixed $data Data to present.
      * @access public
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function __construct($data)
     {
-        if (is_object($data))
-        {
-            if ($data instanceof Collection || $data instanceof Model)
-            {
+        if (is_object($data)) {
+            if (method_exists($data, 'toArray')) {
                 $data = $data->toArray();
-            }
-            else
-            {
+            } else {
                 $data = (array)$data;    
             }
-        }
-        else if (!is_array($data))
-        {
+        } else if (!is_array($data)) {
             throw new \InvalidArgumentException('Data must only be an object or array. ' . gettype($data) . ' was given.');
         }
         parent::__construct($data);
