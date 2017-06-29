@@ -960,7 +960,8 @@ class ArrayPresenter
             $type = str_replace('\\' . $this->typeDelimiter, $this->typeDelimiter, $type);
             $type = explode($this->typeParamDelimiter, $type, 2);
         }
-        @list($type, $param) = $type;
+        $tmp = $type;
+        @list($type, $param) = $tmp;
         $type = strtolower($type);
         if ($type == 'callback') {
             if ($param) {
